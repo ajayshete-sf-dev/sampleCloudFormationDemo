@@ -35,9 +35,9 @@ phases:
       # - command
   build:
     commands:
-      - aws lambda update-function-code \--function-name  serverless-api-acr \--s3-bucket acrbuild --s3-key Acrbuild.zip
-      - aws lambda update-function-code \--function-name  getAllActivityRights-serverless \--s3-bucket acrbuild --s3-key Acrbuild.zip
-      - aws lambda update-function-code \--function-name  deleteActivityRight \--s3-bucket acrbuild --s3-key Acrbuild.zip
+      # - aws lambda update-function-code \--function-name  serverless-api-acr \--s3-bucket acrbuild --s3-key Acrbuild.zip
+      # - aws lambda update-function-code \--function-name  getAllActivityRights-serverless \--s3-bucket acrbuild --s3-key Acrbuild.zip
+      # - aws lambda update-function-code \--function-name  deleteActivityRight \--s3-bucket acrbuild --s3-key Acrbuild.zip
 
       # - command
   #post_build:
