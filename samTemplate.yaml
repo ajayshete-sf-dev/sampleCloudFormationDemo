@@ -14,7 +14,7 @@ Resources:
           Type: Api
           Properties:
             Path: /health
-            HttpMethod: GET
+            Method: GET
       Environment:
         Variables:
           REGION: ap-south-1
