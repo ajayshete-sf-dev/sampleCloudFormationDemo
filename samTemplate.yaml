@@ -8,7 +8,7 @@ Resources:
       Handler: index.handler
       Runtime: nodejs12.x
       CodeUri: ./
-      Role: 'arn:aws:iam::093833860903/MyLambdaRole'
+      # Role: 'arn:aws:iam::093833860903/MyLambdaRole'
       Events:
         GetActRightApi:
           Type: Api
