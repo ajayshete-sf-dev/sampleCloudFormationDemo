@@ -10,11 +10,13 @@ Resources:
       CodeUri: ./
       # Role: 'arn:aws:iam::093833860903/MyLambdaRole'
       Events:
-        GetActRightApi:
-          Type: Api
-          Properties:
-            Path: /health
-            Method: GET
+        HttpGet:
+          GetActRightApi:
+            Type: Api
+            Properties:
+              ProtocolType: HTTP
+              Path: /health
+              Method: GET
       Environment:
         Variables:
           REGION: ap-south-1
