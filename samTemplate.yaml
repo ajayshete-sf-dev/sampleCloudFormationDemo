@@ -13,7 +13,7 @@ Resources:
         GetActRightApi:
           Type: Api
           Properties:
-            Path: /getactRight
+            Path: /health
             Method: GET
       Environment:
         Variables:
