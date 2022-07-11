@@ -14,7 +14,7 @@ exports.handler = async function(event) {
     console.log('Request event: ', event);
     let response;
     switch(true) {
-      case event.requestContext.http.method === 'GET' && event.requestContext.http.path === "/health":
+      case event.requestContext.http.method === 'GET' && event.requestContext.http.resourcePath === "/health":
         response = buildResponse(200 , event);
         break;
       case event.requestContext.http.method === 'POST' && event.requestContext.http.path==="/activityRights":
