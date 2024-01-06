@@ -1,0 +1,198 @@
+JAVA-Exp-RoadMap -->
+
+Core java --> oops, keywords,exception,multithreading,Collection,string, wrapper
+Core java basic coding Que --> string, numbers etc.
+Java 8 --> features theory + stream coding Que
+Springboot --> theory, annotation, Rest api 
+Spring security --> JWT token , encry ,decry 
+JPA & Mongo repo
+Aws basics
+Microservuce arch --> theory + resttemplate examples+ circuit design patteren
+databses--> mysql & mongodb
+cascading -->auto
+scheduler -->@scheduler
+singltone
+emutable
+design patterns
+@transaction
+why we use java 8 rather than collection
+ HTTP statuses
+ monolithic & microservice
+ mongodb & mysql
+ singltone
+------------------------------------------------------------------------------------------------------------------------------------------------------
+ApplicationRunner -> functional Interface --> override run method -> beacuse function interface has only one method 
+@FunctionalInterface
+public interface ApplicationRunner {
+    void run(ApplicationArguments args) throws Exception;
+}
+
+Wrapper classes & String are immutable.
+Immutable class : make class as final , one data mmb final , one paramaterised constructor, one getter method.
+
+Serializabale : Serialization in Java is the concept of representing an object’s state as a byte stream. eg JPA,Hibernate ( FileInputstream--readObject
+				FileOutputstream--writeObject)
+								
+		We can use @Transactional to wrap a method in a database transaction. It allows us to set propagation, isolation, timeout, read-only, 
+		and rollback conditions for our transaction. We can also specify the transaction manager.		
+				
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Core Java : 
+notes : we can overload java main method.
+The super keyword in Java is a reference variable which is used to refer immediate parent class object.
+final variable--> do not chenge value method-> do not override class--> stop inheritance .we cannot declare constructor as final.
+Abstract Class -> An abstract class must be declared with an abstract keyword.
+It can have abstract and non-abstract methods.
+It cannot be instantiated.
+It can have constructors and static methods also.
+It can have final methods which will force the subclass not to change the body of the method.
+
+Interface --> It has static constants and abstract methods.achive multiple inheritance 
+Since Java 8, we can have default and static methods in an interface.
+Since Java 9, we can have private methods in an interface.
+
+wrapper classes --> autoboxing ->Integer i=Integer.valueOf(a);//converting int into Integer explicitly  
+unboxing --> int i=a.intValue();//converting Integer to int explicitly  
+
+StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously.
+StringBuilder is non-synchronized i.e. not thread safe. It means two threads can call the methods of StringBuilder simultaneously.
+StringBuffer is less efficient than StringBuilder.
+StringBuilder is more efficient than StringBuffer.
+StringBuffer was introduced in Java 1.0	
+StringBuilder was introduced in Java 1.5
+
+The Exception Handling in Java is one of the powerful mechanism to handle the runtime errors so that the normal flow of the application
+can be maintained. java.lang.throwable --> main class 
+Checked-exception(Compiletime)-->IOexception, classNotFoundException,SqlException
+Unchecked-Exception (Runtime) --> Arithmatic,NullPointer,IndexOutOfBoundException
+
+How i can handle Exception in Project ?
+
+1. Create one class defaultExceptionHandler --> annoted this class as @ControllerAdvise --> and create method for eg duplicateClassNotFoundEx and nnoted as this method as @ExceptionHandler
+
+
+How to create Thread -->
+By extending Thread class -> Thread class provide constructors and methods to create and perform operations on a thread.
+Thread class extends Object class and implements Runnable interface. methods->run,start,sleep,join,getPriority,setPriority
+By implementing Runnable interface->Runnable interface have only one method named run().
+
+Java Collection
+
+Interface--> List,Set -->ArryList,LinkedList /hashedSet ,LinkedHashset
+Internal working of Hashset -->
+
+It implements the map interface. It stores the data in the pair of Key and Value. HashMap contains an array of the nodes,
+ and the node is represented as a class. It uses an array and LinkedList data structure internally for storing Key and Value. 
+ There are four fields in HashMap. (int hash,key ,value, node->next)
+ it uses equals & hashcode method
+ equals methods ->checks the equaity of two objects . 
+ hashcode method -> its calculate the bucket number. both are Object class methods. 
+ We use put() method to insert the Key and Value pair in the HashMap. The default size of HashMap is 16 (0 to 15).
+
+ ___________________________________________________________________________________________________________________________________________________
+ 
+ SpringBoot :
+@Controller: The @Controller is a class-level annotation. It is a specialization of @Component. It marks a class as a web request handler
+@RequestBody: It is used to bind HTTP request with an object in a method parameter. 
+@ResponseBody: It binds the method return value to the response body. It tells the Spring Boot Framework to serialize a return an object into JSON and XML format.
+@PathVariable: It is used to extract the values from the URI. 
+@RequestParam: It is used to extract the query parameters form the URL. It is also known as a query parameter.
+@RequestHeader: It is used to get the details about the HTTP request headers. 
+@RestController: It can be considered as a combination of @Controller and @ResponseBody annotations. 
+
+Actuator ->Monitoring our app, gathering metrics, and understanding traffic or the state of our database becomes trivial with this dependency.
+spring-boot-starter-actuator
+
+JPA:JPA follows Object-Relation Mapping (ORM). It allows us to access and persist data between 
+Java object/ class and relational database.javax.persistence package.JPA uses EntityManager for handling the persistence of data.
+four interface --> repository ,crudrepositiry,PagingandSortingrepository,QueryDslPredicateExecutor
+JPARepositiry extend PagingandSortingrepository
+@Table(name = "users")
+@NamedQueries(value = {
+  @NamedQuery(name = "User.findByLastname", query = "select u from User u where u.lastname = ?1") })
+  
+   @Query("select u from User u where u.firstname like %?1")
+  List<User> findByFirstnameEndsWith(String firstname);
+  
+Cascading type --> ALL, Persist,merge,remove,referesh(latest state occupied form parent)
+
+ Swagger Configuration --> Springfox-swagger dependency-->@EnableSwagger -->create config class make class as @Configuration and  @Bean
+    public Docket api() { 
+        return new Docket(DocumentationType.SWAGGER_2)  
+          .select()                                  
+          .apis(RequestHandlerSelectors.any())              
+          .paths(PathSelectors.any())                          
+          .build(); 
+MongoClient : MongoDatabase database = mongoClient.getDatabase(MongoDB);
+        MongoCollection<Document> collection = database.getCollection("LoginUsers");
+        FindIterable<Document> requestDocs = collection.find();
+       Aggregation aggregation = Aggregation.newAggregation(
+                match(Criteria.where("is_genAi_generated")
+                group("commitment_categories.commitment_category").count().as("count"),
+                project("count").and("_id").as("commitment_category"),
+                sortOperation,
+                limitOperation
+        );
+		
+		  
+		 
+OpenApi --> springdoc.api-docs.path=/api-docs  dependency -->pringdoc-openapi-starter-webmvc-ui
+
+
+
+
+Functional Interface --> only one abstract method and but have multimple default and static method
+						eg. Runnable->run , comparable-> compareTo, comparator -> compare & equlas
+						
+						there are three types Predicate , consumer , supplier
+Consumer -> when we want one object as input & perform operation and dont written anything
+			abstract method -> void accept<T t>  eg. forEach() method always accept consumer
+Predicate --> (Condition check )when we want one object as input and perform operation and its written boolean values as true & false.
+			abstract method--> boolean test<T t> eg. filter method
+Supplier --> no input but output will be expected.
+			abstract main--> T get() eg. orElse method/orElseGet method
+			
+Stream Api -> stream api is a sequence of objects that supports various methods which can be pipelined to produce desired output.
+			  stream does not change original object, code reduce,
+
+map & flat map --> map is used for data transformation & flatmap is used for data transformation as well as flattering.
+                   map -> one to one mapping flat map--> one to many
+optional --> to provide nullpointerException-->empty,of,ofNullble
+
+____________________________________________________________________________________________________________________________________________________
+
+microservice -->
+
+Eureka service registry -> services are register 
+API gateway -> fliter the request as per service 
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

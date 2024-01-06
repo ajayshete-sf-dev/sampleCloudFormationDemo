@@ -1,0 +1,70 @@
+Comparable	                                                                                                                Comparator
+Comparable provides compareTo() method to sort elements in Java.	                 Comparator provides compare() method to sort elements in Java.
+Comparable interface is present in java.lang package.	                                                        Comparator interface is present in java.util package.
+The logic of sorting must be in the same class whose object you are going to sort.	The logic of sorting should be in separate class to write different sorting based on different attributes of objects.
+The class whose objects you want to sort must implement comparable interface.	Class, whose objects you want to sort, do not need to implement a comparator interface.
+It provides single sorting sequences.	                                                                              It provides multiple sorting sequences.
+This method can sort the data according to the natural sorting order.	                    This method sorts the data according to the customized sorting order.
+It affects the original class. i.e., actual class is altered.	                                                           It doesn’t affect the original class, i.e., actual class is not altered.
+Implemented frequently in the API by: Calendar, Wrapper classes, Date, and
+String.	                                                                                                                                         It is implemented to sort instances of third-party classes.
+All wrapper classes and String class implement comparable interface.	                    The only implemented classes of Comparator are Collator and RuleBasedColator.
+
+
+****JDBC Connectivity*************
+Driver class: The driver class for the mysql database is com.mysql.jdbc.Driver.
+Connection URL: The connection URL for the mysql database is jdbc:mysql://localhost:3306/sonoo where jdbc is the API, mysql is the database, localhost is the server name on which mysql is running, we may also use IP address, 3306 is the port number and sonoo is the database name. We may use any database, in such case, we need to replace the sonoo with our database name.
+Username: The default username for the mysql database is root.
+Password: It is the password given by the user at the time of installing the mysql database. In this example, we are going to use root as the password.
+
+Class.forName("com.mysql.jdbc.Driver");  
+Connection con=DriverManager.getConnection(  
+"jdbc:mysql://localhost:3306/sonoo","root","root");  
+//here sonoo is database name, root is username and password  
+Statement stmt=con.createStatement();  
+ResultSet rs=stmt.executeQuery("select * from emp");  
+while(rs.next())  
+System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  
+con.close();  
+********************************************************************************
+Compile Time Exception : - IOException, SQLException,ClassNotFound
+Run Time Exception:-  ArithmeticException, NullPointerException, ArrayIndexOutOfBoundsException,
+
+Interface ; public static final : variable , and public abstract void : method
+
+HashSet stores the elements by using a mechanism called hashing.
+HashSet contains unique elements only.
+HashSet allows null value.
+HashSet class is non synchronized.
+HashSet doesn't maintain the insertion order. Here, elements are inserted on the basis of their hashcode.
+HashSet is the best approach for search operations.
+The initial default capacity of HashSet is 16, and the load factor is 0.75.
+
+
+Java HashMap contains values based on the key.
+Java HashMap contains only unique keys.
+Java HashMap may have one null key and multiple null values.
+Java HashMap is non synchronized.
+Java HashMap maintains no order.
+The initial default capacity of Java HashMap class is 16 with a load factor of 0.75.
+
+  for(Map.Entry m : map.entrySet()){    
+    System.out.println(m.getKey()+" "+m.getValue());    
+   }  
+***********************************************************************************
+1) HashMap is non synchronized.It is not-thread safe and can't be shared between many threads without proper synchronization code.	Hashtable is synchronized. It is thread-safe and can be shared with many threads.
+2) HashMap allows one null key and multiple null values.                                                                                                                                        	Hashtable doesn't allow any null key or value.
+HashMap inherits AbstractMap class.	                                                                                                                                                                        Hashtable inherits Dictionary class.
+*****************************************************************************************************************************************
+ transient keyword is used along with instance variables to exclude them from serialization process. If a field is transient its value will not be persisted. 
+On the other hand, volatile keyword is used to mark a Java variable as "being stored in main memory".
+*****************************************************************************************************************************
+Java 8 new features: 
+1.Lamda Exp :- It is very useful in collection library. It helps to iterate, filter and extract data from collection.Lambda expression provides implementation of functional interface.
+(argument-list) -> {body}  
+2.Method Reference : Reference to a static method.Reference to an instance method.Reference to a constructor.
+3.Functional Interface : An Interface that contains exactly one abstract method is known as functional interface. It can have any number of default, static methods but can contain only one abstract method. 
+4.Stream does not store elements. It simply conveys elements from a source such as a data structure, an array, or an I/O channel, through a pipeline of computational operations
+
+
+

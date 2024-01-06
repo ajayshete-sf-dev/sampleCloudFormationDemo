@@ -1,0 +1,17 @@
+Functional Interface --> only one abstract method and but have multimple default and static method
+						eg. Runnable->run , comparable-> compareTo, comparator -> compare & equlas
+						
+						there are three types Predicate , consumer , supplier
+Consumer -> when we want one object as input & perform operation and dont written anything
+			abstract method -> void accept<T t>  eg. forEach() method always accept consumer
+Predicate --> (Condition check )when we want one object as input and perform operation and its written boolean values as true & false.
+			abstract method--> boolean test<T t> eg. filter method
+Supplier --> no input but output will be expected.
+			abstract main--> T get() eg. orElse method/orElseGet method
+			
+Stream Api -> stream api is a sequence of objects that supports various methods which can be pipelined to produce desired output.
+			  stream does not change original object, code reduce,
+
+map & flat map --> map is used for data transformation & flatmap is used for data transformation as well as flattering.
+                   map -> one to one mapping flat map--> one to many
+optional --> to provide nullpointerException-->empty,of,ofNullble

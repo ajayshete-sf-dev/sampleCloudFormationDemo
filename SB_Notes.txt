@@ -1,0 +1,94 @@
+SpringBoot framework: RAD and minimal spring configuration required.doent required any <bean> configuations files .
+In short springboot is a combination of spring Framework and Embeded Servers.
+***Use of Spring Boor framework :   1.we can use dependency enjectiion approach2.also contains powerfull databse transaction mngt 
+3.integrated with other java frameworks like JPA\Hibernate,Struct.4.Reduce cost and dev time of application
+***Advantages of SpringBoot :- 1.It created Stand-alone String App that can be started using java -jar files
+   2.Test esily with diff Embeded HTTP servers like Tomcat,Jetty, therfore doesent need to diploy WAR failes.
+
+***how to start string app:- StringApplication.run(ClassName.class,args);
+
+***Architecture of Springboot :- 1.Presentation layer: (Authentication and JSON translation)i.e view it handles HTTP req and
+ translate JSON pramaetr to object and authenticate it and transfer to buiseess layer.
+2.Business Layer(Business Logic,validation and authorisation):i.e controller , it handles the business logic.it contains Service 
+classes and user services provided by data access layer.
+3. Persistance layer (Storage Logic):-transalte busines object to dn rows.
+4.Database Layer: Crud opearations performed.
+
+SpringBoot Annotation : provide data about program,means provide supplemental information to the program. 
+1.@Required :- applies to a bean setter method when we use Setter method in our project we use @Required annotation.
+2.@Autowired: used to autowire spring bean on setter methods,instance var,and counstructor also we can connect two class and implicitly create an object .
+3.@Configuration : Class level annotation when we add any configuration in our project then use for eg swagger configuration
+4.@ComponentScan : used with  @Configuration when we want to scan package for bean using basepackge().
+5.@Bean : It is a method level annotation 
+@SpringBootApplication=@ComponentScan+@EnableAutoConfiguration+@Configuration
+
+Spring Framework Sterotype Annotation: 1.@Component : it is found during the class path
+ 2.@Controller: class-level annotation ,it marks the class as a web request handler.mostly used with @RequestMapping annotation 
+3. @Service : retun the business logic 4.@Repository: DAO layes(Data access object) that access the db directly.
+
+***Spring : Spring is a lightweight framework. It can be thought of as a framework of frameworks because it provides support to various 
+frameworks such as Struts, Hibernate, Tapestry, EJB, JSF, etc.
+***IOC :to instantiate the application class ......  to configure the object  .....to assemble the dependencies between the objects
+two Types : BeanFactory   ApplicationContext......
+
+***Dependency Enjection : remove the dependency and make our programe loosly coupled.......two types : By setter and By counstructor
+****Factory Method : A method that returns instance of a class is called factory method.
+***AOP : AOP breaks the program logic into distinct parts (called concerns). It is used to increase modularity by cross-cutting concerns.
+***Java 8 new features: 
+1.Lamda Exp :- It is very useful in collection library. It helps to iterate, filter and extract data from collection.Lambda expression provides implementation of functional interface.
+(argument-list) -> {body}  
+2.Method Reference : Reference to a static method.Reference to an instance method.Reference to a constructor.
+3.Functional Interface : An Interface that contains exactly one abstract method is known as functional interface. It can have any number of default, static methods but can contain only one abstract method. 
+4.Stream does not store elements. It simply conveys elements from a source such as a data structure, an array, or an I/O channel, through a pipeline of computational operations
+
+
+***Types of bean Scope: 
+                   singleton	                         The bean instance will be only once and same instance will be returned by the IOC container. 
+It is the default scope.
+2)	prototype	     The bean instance will be created each time when requested.
+3)	request	     The bean instance will be created per HTTP request.
+4)	session          The bean instance will be created per HTTP session.
+5)	globalsession	The bean instance will be created per HTTP global session. It can be used in portlet context only.
+
+****Spring Starter : The spring-boot-starter-parent is a project starter. It provides default configurations for our applications. 
+It is used internally by all dependencies.
+****Spring Actuator :  It includes a number of additional features that help us to monitor and manage the Spring Boot application. 
+
+****Spring Boot JPA is a Java specification for managing relational data in Java applications. It allows us to access and persist data between 
+Java object/ class and relational database.
+ JPA follows Object-Relation Mapping (ORM). It is a set of interfaces. 
+It also provides a runtime EntityManager API for processing queries and transactions on the objects against the database
+
+GIT INIT --->init the git.....Git clone <url> : Git commit -m "msg"    git status Git branch .....Git checkout -b branch name
+.....Git push origin master.......Git pull link
+
+
+
+4315814442576001
+08/30
+503
+
+
+spring, microserv,java 8, sping security--->keys
+secondary--> git,angular,aws,keyclock
+30 days
+serializable & clonable
+sync& async---> rabitmq messaging Q-->ibm server
+hestric server--> time wait info -->dashboard(fallback msges)
+scheduling
+kybana-->correlation id
+keyclock->spring security 
+auth-->jwt
+encry-decry
+docker& jenkis
+aws
+angular basic Q
+git
+java-> springboot, java 8, security
+sql & mongodb
+jpa
+mongoclient-->check orm
+
+
+
+
