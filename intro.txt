@@ -1,13 +1,14 @@
-Hello Team Good Afternoon,
-               My name is Ajay Shete a.I have total 3.5 year of professional experience in Software development using Java 
-and SpringBoot technologies.I have joined mindtree in last year as Senior software Engineer.
-in mindtree i worked on two project for client aflac i.e one is common coponant migration and 2nd one so now im working on that project is Enterprise AI.
-Enterprise AI is a base project that has multiple modules such as platform, co-Pilate, playground, obligation, 
+Hello Team Good morning,
+               My name is Ajay Shete a.I have total 4+ years of professional experience in Software development using Java 
+and SpringBoot technologies.last 2 years im associated with ltimindtree as Senior software Engineer.
+in LTimindtree i worked on two project one is Business service application ,client was aflac. and now working on Enterpise Ai project . the client of this project is LTIMindtree itslef.
+Enterprise AI is a Ai base project that has multiple modules such as platform, co-Pilate, playground, obligation, 
 and compliance. for prompt execution using different LLM models.
 In the Obligation & Compliance module, the file extraction and download process are based on legal 
 documentation. One is an MSA (Master Service Agreement) and the second is a SOW (Statement of Work). In 
 both files there are commitment categories, so based on commitment category uploaded document content 
 will be extracted and end user can edit those data and download it
-I have technology Stack like java,springboot,sprig data JPA,mogo etc.I have aware about the some tool eclips, intelij idea, github, swagger,postman
+I have technology Stack i.e  java,springboot,java 8 ,sprig data JPA,Rest Apis,junit,mockito.& I aware about the some tool eclips, intelij idea, github, swagger,postman,docker & aws.
+
 Thats All from My side 
 
